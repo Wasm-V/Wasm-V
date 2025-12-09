@@ -1,0 +1,10 @@
+flowchart TB
+    A[Project Discovery] --> B[CVE Lookup] --> C[Compilation]
+    A --> D[WASM Projects<br/>JSON]
+    B --> E[Project CVEs<br/>JSON] 
+    C --> F[WASM Binaries<br/>.wasm files]
+    
+    D --> G[Curated Dataset<br/>JSON]
+    E --> G
+    F --> G
+

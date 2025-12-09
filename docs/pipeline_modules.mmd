@@ -1,0 +1,26 @@
+%%{init: {'theme':'neutral', 'themeVariables': { 'fontSize':'16px'}}}%%
+graph TB
+    subgraph plugins["Extensible Plugins"]
+        direction LR
+        p1["Source Plugins<br/>CVE | RustSec | Custom"]
+        p2["Toolchain Plugins<br/>Emscripten | wasm-pack | Custom"]
+        p3["Analysis Plugins<br/>Static | Dynamic | Custom"]
+    end
+    
+    subgraph core["Core Pipeline Stages"]
+        direction LR
+        c1["Ingest"] --> c2["Filter"] --> c3["Normalize"] --> c4["Compile"]
+    end
+    
+    subgraph data["Standardized Data Flow"]
+        direction LR
+        d1["Raw<br/>JSON"] --> d2["Filtered<br/>JSON"] --> d3["Normalized<br/>JSON"] --> d4["Compiled<br/>JSON+WASM"]
+    end
+    
+    plugins --> core
+    core --> data
+    data -.->|"feedback"| plugins
+    
+    style plugins fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style core fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style data fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px

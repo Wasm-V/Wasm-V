@@ -1,0 +1,31 @@
+%%{init: {'theme':'neutral', 'themeVariables': { 'fontSize':'16px'}}}%%
+graph LR
+    subgraph Input["Input Sources"]
+        A["Juliet<br/>CWE-XXX"]
+        B["CVE<br/>CVSS"]
+        C["RustSec<br/>TOML"]
+        D["OSS-Fuzz<br/>Reports"]
+    end
+    
+    subgraph Process["Normalization"]
+        E["CWE<br/>Mapping"]
+        F["Severity<br/>0-10"]
+        G["Source<br/>Extract"]
+    end
+    
+    subgraph Output["Unified Schema"]
+        H["ID | CWE | Severity<br/>Source | Repo | Meta"]
+    end
+    
+    A --> E
+    B --> E
+    C --> E
+    D --> E
+    
+    E --> F
+    F --> G
+    G --> H
+    
+    style Input fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style Process fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style Output fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
