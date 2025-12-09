@@ -107,6 +107,23 @@ export WASM_COMPILATION_TIMEOUT=15              # Compilation timeout (minutes)
 - **[Manual Page](MANUAL.md)** - Comprehensive documentation  
 - **[Development Guide](.github/copilot-instructions.md)** - Architecture and AI coding guidelines
 
+## Citation
+
+If you use WASM-V in your research, please cite our work:
+
+**WASM-V: A Unified Vulnerability Aggregation Platform for WebAssembly Security Research** (Under submission)  
+[Preprint available on arXiv](https://arxiv.org/)
+
+```bibtex
+@article{wasmv2025,
+  title={WASM-V: A Unified Vulnerability Aggregation Platform for WebAssembly Security Research},
+  author={},
+  journal={arXiv preprint},
+  year={2025},
+  note={Under submission}
+}
+```
+
 ## Security Notice
 
 This tool processes known vulnerable code and generates potentially dangerous binaries. Use in isolated environments and handle outputs with appropriate security measures.
